@@ -1,0 +1,53 @@
+/*---------- general ----------*/
+body {
+  background-color: #EEE;
+  font-family: sans-serif;
+}
+h1 {
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px 0 #843a3a;
+  text-transform: uppercase;
+  color: #244751;
+}
+
+/*---------- star rating ----------*/
+%flex-display {
+  display: flex;
+}
+.star-rating {
+  @extend %flex-display;
+  font-size: 1em;
+}
+.back-stars {
+  @extend %flex-display;
+  color: #000000;
+  position: relative;
+  text-shadow: 4px 4px 10px #000000;
+}
+.front-stars {
+  @extend %flex-display;
+  color: #FFBC0B;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: 2px 2px 5px #d29b09;
+  top: 0;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  @extend %flex-display;
+  font-size: 1em;
+  direction: rtl;
+}
+.rating > span {
+  @extend %flex-display;
+  color: #000000;
+  position: relative;
+  text-shadow: 4px 4px 10px #000000;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  color: #FFBC0B;
+   content: "\2605";
+   position: absolute;
+}

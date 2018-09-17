@@ -1,0 +1,33 @@
+{
+  "name": "node-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "local": "./node_modules/.bin/nodemon --ignore public/"
+  },
+  "author": "Lighthouse Labs",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.1",
+    "es6-promise": "^4.2.4",
+    "express": "^4.13.4",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.3.1",
+    "jquery-bar-rating": "^1.2.2",
+    "knex": "^0.11.7",
+    "knex-logger": "^0.1.0",
+    "morgan": "^1.7.0",
+    "node-sass-middleware": "^0.9.8",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}

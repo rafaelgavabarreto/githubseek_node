@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <% include ./navbar%>
+</head>
+  <body>
+    <div>
+      <h3>Welcome New User !</h3>
+      <form method="POST" action="/api/users/register">
+        <div>
+         <label value="Email"/>
+          <p><input type="email" id ="email" name="email"/></p>
+        </div>
+        <div>
+        <label value="First Name"/>
+          <p><input type="first_name" id ="first_name" name="first_name"/></p>
+        </div>
+        <div>
+          <label value="Last Name"/>
+            <p><input type="last_name" id ="last_name" name="last_name"/></p>
+        </div>
+        <label value="Password"/>
+        <p><input id="password" type="password" name="password" placeholder="*************" /></p>
+        <input type="submit" value="Create User">
+      </form>
+    </div>
+  </body>
+</html>

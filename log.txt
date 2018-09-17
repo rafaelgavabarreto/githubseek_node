@@ -1,0 +1,87 @@
+Example app listening on port 8080
+[0mPOST /api/details/new_opinion [36m302 [0m35.304 ms - 96[0m
+[90mSQL[39m [36minsert into "opinions" ("id_beer", "id_user", "opinion", "rate") values (?, ?, ?, ?)[39m [90m{337949, 3, 22, 2}[39m [35m10.945ms[39m
+{ username: 'Rafael Barreto',
+  user_id: 3,
+  opinions:
+   [ anonymous {
+       id: 11,
+       id_user: 3,
+       id_beer: '337949',
+       opinion: '122',
+       rate: 1,
+       created_at: 2018-08-30T04:56:02.758Z,
+       updated_at: 2018-08-30T04:56:02.758Z },
+     anonymous {
+       id: 12,
+       id_user: 3,
+       id_beer: '337949',
+       opinion: '22',
+       rate: 2,
+       created_at: 2018-08-30T04:59:29.573Z,
+       updated_at: 2018-08-30T04:59:29.573Z } ],
+  database:
+   { id: 337949,
+     is_dead: false,
+     name: 'Heineken',
+     tags:
+      'heineken beer lager netherlands region not specified heineken\'s heinekens brouwerijen nederland bv can',
+     is_discontinued: false,
+     price_in_cents: 300,
+     regular_price_in_cents: 300,
+     limited_time_offer_savings_in_cents: 0,
+     limited_time_offer_ends_on: null,
+     bonus_reward_miles: 0,
+     bonus_reward_miles_ends_on: null,
+     stock_type: 'LCBO',
+     primary_category: 'Beer',
+     secondary_category: 'Lager',
+     origin: 'Netherlands, Region Not Specified',
+     package: '500 mL can',
+     package_unit_type: 'can',
+     package_unit_volume_in_milliliters: 500,
+     total_package_units: 1,
+     volume_in_milliliters: 500,
+     alcohol_content: 470,
+     price_per_liter_of_alcohol_in_cents: 1276,
+     price_per_liter_in_cents: 600,
+     inventory_count: 59135,
+     inventory_volume_in_milliliters: 29567500,
+     inventory_price_in_cents: 17740500,
+     sugar_content: null,
+     producer_name: 'Heineken\'s Brouwerijen Nederland BV',
+     released_on: '2018-02-26',
+     has_value_added_promotion: false,
+     has_limited_time_offer: false,
+     has_bonus_reward_miles: false,
+     is_seasonal: false,
+     is_vqa: false,
+     is_ocb: false,
+     is_kosher: false,
+     value_added_promotion_description: null,
+     description: null,
+     serving_suggestion:
+      'A wonderful thirst quencher. Also, a great refresher when paired with appetizers, lightly spiced dishes, pizza or burgers.',
+     tasting_note:
+      '142 years of tradition are behind this iconic, premium lager. Clear gold yellow colour with fine head. Appealing aromas of sweet malt, floral hops and hints of biscuit, grain and herb. Dry, crisp and fresh with a creamy texture. Flavours of barley malt and fruit, leading to grassy/herbal notes on a refreshing bitter finish.',
+     updated_at: '2018-08-29T14:30:09.874Z',
+     image_thumb_url:
+      'https://dx5vpyka4lqst.cloudfront.net/products/337949/images/thumb.png',
+     image_url:
+      'https://dx5vpyka4lqst.cloudfront.net/products/337949/images/full.jpeg',
+     varietal: 'European Lager',
+     style: 'Light & Hoppy',
+     tertiary_category: 'Pale Lager',
+     sugar_in_grams_per_liter: null,
+     clearance_sale_savings_in_cents: 0,
+     has_clearance_sale: false,
+     product_no: 337949 } }
+[0mGET /api/details/detail/337949 [32m200 [0m252.685 ms - 2807[0m
+[90mSQL[39m [36mselect * from "opinions" where "id_beer" = ?[39m [90m{337949}[39m [35m3.370ms[39m
+[0mGET /vendor/normalize-4.1.1.css [36m304 [0m4.960 ms - -[0m
+[0mGET /vendor/border-box.css [36m304 [0m4.390 ms - -[0m
+[0mGET /vendor/moment.js [33m404 [0m5.711 ms - 155[0m
+[0mGET /scripts/app.js [36m304 [0m5.929 ms - -[0m
+[0mGET /styles/layout.css [32m200 [0m11.372 ms - -[0m
+[0mGET /vendor/moment.js [33m404 [0m0.340 ms - 155[0m
+[0mGET /api/users [33m404 [0m0.583 ms - 148[0m
