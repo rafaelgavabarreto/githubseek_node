@@ -2,6 +2,8 @@
 body {
   background-color: #EEE;
   font-family: sans-serif;
+  font-size: 14px;
+  background: linear-gradient(to right, white 50%, rgba(237,230,254,1) 50%);
 }
 h1 {
   font-family: 'Raleway', sans-serif;
@@ -9,45 +11,43 @@ h1 {
   text-transform: uppercase;
   color: #244751;
 }
-
-/*---------- star rating ----------*/
-%flex-display {
-  display: flex;
+.web__name {
+  padding: 1.3em;
+  background-color: rgba(93,11,237,1);
+  color: white;
+  font-size: 27px;
+  text-align: center;
+  font-weight: bold;
 }
-.star-rating {
-  @extend %flex-display;
-  font-size: 1em;
+table {
+  padding: 2em;
 }
-.back-stars {
-  @extend %flex-display;
-  color: #000000;
-  position: relative;
-  text-shadow: 4px 4px 10px #000000;
+.search {
+  padding: 1em 0em 1em 0em;
 }
-.front-stars {
-  @extend %flex-display;
-  color: #FFBC0B;
-  overflow: hidden;
-  position: absolute;
-  text-shadow: 2px 2px 5px #d29b09;
-  top: 0;
+.search__field {
+  margin: 0 1rem 0 0;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  width: 73%;
+  border: 1px solid #6d6b6b;
+  border-radius: 4px;
 }
-
-.rating {
-  unicode-bidi: bidi-override;
-  @extend %flex-display;
-  font-size: 1em;
-  direction: rtl;
+.search__button {
+  padding: 8px 33px;
+  border-radius: 5px;
+  border-style: unset;
+  background-color:rgba(93,11,237,1);
+  color: white;
 }
-.rating > span {
-  @extend %flex-display;
-  color: #000000;
-  position: relative;
-  text-shadow: 4px 4px 10px #000000;
+.head__table {
+  line-height: 3em;
+  text-align: left;
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-  color: #FFBC0B;
-   content: "\2605";
-   position: absolute;
+.input__button {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  color: #337ab7;
+  border-radius: 0;
+  text-decoration: underline;
 }

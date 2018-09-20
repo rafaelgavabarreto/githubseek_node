@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <% include ./navbar%>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<head>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
-
-  <body>
-    <% if (first_page != true) { %>
-      <form method="POST" action="/<%= current_page - 1%>">
-    <% } %>
-        <input type="submit" value="Last Page"/>
-      </form>
-
-    <% if (final_page != true) { %>
-      <form method="POST" action="/<%= current_page + 1%>">
-    <% } %>
-        <input type="submit" value="Next Page"/>
-      </form>
-
-    <% for (var result in database) { %>
-      <ul>
-        <tr><td>
-        <img src="<%= database[result].image_thumb_url %>">
-      </td>
-      <td>
-        <li>Name: <%= database[result].name %></li>
-        <li>$ <%= database[result].price_in_cents %></li>
-        <li><%= database[result].package %></li>
-        <li>Made in: <%= database[result].origin %></li>
-        <li>By: <%= database[result].producer_name %></li>
-        <li>Release Date: <%= database[result].released_on %></li>
-        <li>Style: <%= database[result].style %></li>
-        <form method="GET" action="/api/details/detail/<%= database[result].id %>">
-          <input type="submit" value="Details"/>
-        </form>
-      </td>
-      </tr>
-      </ul> 
-    <% } %>
-  </body>
+<body>
+  <div class="web__name">My Github Favorites</div>
+  <div>
+      <table style="float: left;width: 50%;">
+        <td colspan="4" class="search">
+            <form method="POST" action="/">
+              <label value="Search" >
+                <input id="search" name="search" class="search__field">
+                <input type="submit" value="Search" class="search__button">
+            </form>
+        </td>
+        <tr class="head__table">
+          <th>Name</th>
+          <th>Language</th>
+          <th>Latest Tag</th>
+        </tr>
+        <% for (var result in database) { %>
+          <tr>
+            <td><a href="<%= database[result].html_url %>"><%= database[result].full_name %></td></a>
+            <td><%= database[result].language %></td>
+            <td><%= database[result].tags %></td>
+            <td>
+              <form method="POST" action="/add">
+                <input style="display:none" name="id" value="<%= database[result].id %>"/>
+                <input type="submit" value="Add" class="input__button"/>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </table>
+      <table style="float: left;width: 50%;">
+        <tr class="head__table">
+          <th>Name</th>
+          <th>Language</th>
+          <th>Latest Tag</th>
+        </tr>
+        <% for (var result in favorites) { %>
+          <tr>
+            <td><a href="<%= favorites[result].html_url %>"><%= favorites[result].full_name %></td></a>
+            <td><%= favorites[result].language %></td>
+            <td><%= favorites[result].tags %></td>
+            <td>
+              <form method="POST" action="/remove">
+                <input style="display:none" name="id" value="<%= favorites[result].id %>"/>
+                <input type="submit" value="Remove" class="input__button"/>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </table>
+  </div>
+</body>
 </html>
